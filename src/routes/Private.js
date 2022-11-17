@@ -11,7 +11,7 @@ export default function Private({ children }){
 
   useEffect(() => {
     async function checkLogin() {
-      const unsub = onAuthStateChanged(auth, (user) => {
+       onAuthStateChanged(auth, (user) => {
         
         if(user) {
           const userData = {
@@ -40,7 +40,7 @@ export default function Private({ children }){
   }
 
   if(!signed) {
-    return <Navigate to='/login'/>
+    return <Navigate to='/login' />
   }
 
   return children
